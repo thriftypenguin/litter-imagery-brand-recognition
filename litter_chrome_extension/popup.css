@@ -1,0 +1,19 @@
+body {
+  width: 12rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #36454F 0%, #7393B3 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+p {
+  color: #FFF; /* Changed to white for better contrast */
+}
+
+a {
+  color: #B0C4DE; /* A lighter steel blue for visibility and style */
+  text-decoration: none; /* Optional: removes underline */
+}
