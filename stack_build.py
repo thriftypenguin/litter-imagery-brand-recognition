@@ -15,8 +15,8 @@ stack = Stack(app, "LogoReconProjectStack")
 
 # Create an S3 bucket
 bucket = s3.Bucket(
-    stack, "OLM_pics_bucket",
-    bucket_name="OLM_pics_bucke",
+    stack, "olm-pics-s3",
+    bucket_name="olm-pics-s3",
     removal_policy=cdk.RemovalPolicy.DESTROY,
     auto_delete_objects=True,
     block_public_access=s3.BlockPublicAccess.BLOCK_ALL
