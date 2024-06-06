@@ -11,12 +11,12 @@ from aws_cdk import (
 import aws_cdk as cdk
 
 app = App()
-stack = Stack(app, "LogoReconProjectStack")
+stack = Stack(app, "LogoReconProjectStack1")
 
 # Create an S3 bucket
 bucket = s3.Bucket(
-    stack, "olm-pics-s3",
-    bucket_name="olm-pics-s3",
+    stack, "olm-pics-s3-backup",
+    bucket_name="olm-pics-s3-backup",
     removal_policy=cdk.RemovalPolicy.DESTROY,
     auto_delete_objects=True,
     block_public_access=s3.BlockPublicAccess.BLOCK_ALL
