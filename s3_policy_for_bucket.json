@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::590184117760:role/LogoReconProjectStack-CustomS3AutoDeleteObjectsCust-nwFomcC6gN2W"
+      },
+      "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+      ],
+      "Resource": ["arn:aws:s3:::olm-pics-s3", "arn:aws:s3:::olm-pics-s3/*"]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::AccountB:user/AccountBUserName",
+          "arn:aws:iam::AccountC:user/AccountCUserName",
+          "arn:aws:iam::AccountD:user/AccountDUserName"
+        ]
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:List*",
+        "s3:GetBucket*"
+      ],
+      "Resource": ["arn:aws:s3:::olm-pics-s3", "arn:aws:s3:::olm-pics-s3/*"]
+    }
+  ]
+}
