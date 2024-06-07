@@ -18,9 +18,8 @@
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "arn:aws:iam::AccountB:user/AccountBUserName",
-          "arn:aws:iam::AccountC:user/AccountCUserName",
-          "arn:aws:iam::AccountD:user/AccountDUserName"
+          "arn:aws:iam::590183661044:user/evelynli9520",
+          "arn:aws:iam::074638429036:user/nick-admin"
         ]
       },
       "Action": [
