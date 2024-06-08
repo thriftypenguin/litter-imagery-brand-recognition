@@ -19,7 +19,8 @@
       "Principal": {
         "AWS": [
           "arn:aws:iam::590183661044:user/evelynli9520",
-          "arn:aws:iam::074638429036:user/nick-admin"
+          "arn:aws:iam::074638429036:user/nick-admin",
+          "arn:aws:iam::533267010871:user/capstone-admin"
         ]
       },
       "Action": [
