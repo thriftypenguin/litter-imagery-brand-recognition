@@ -2,3 +2,4 @@
 .venv/
 cdk.out/
 cdk.json
+sample_images/
