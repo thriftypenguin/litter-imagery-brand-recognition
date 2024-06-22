@@ -137,6 +137,7 @@ def execute_many(df, table):
     # SQL quert to execute
     query = "INSERT INTO %s(%s) VALUES(%%s,%%s,%%s)" % (table, cols)
     try:
+        cursor = connection.cursor()
         cursor.executemany(query, tuples)
         connection.commit()
     except (Exception, psycopg2.DatabaseError) as error:
