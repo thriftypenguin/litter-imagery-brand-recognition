@@ -3,3 +3,5 @@
 cdk.out/
 cdk.json
 sample_images/
+login_config_awsrds.json
+__pycache__/
