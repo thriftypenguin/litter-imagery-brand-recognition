@@ -3,6 +3,21 @@
     {
       "type": "aws-sam",
       "request": "direct-invoke",
+      "name": "update-brand-score-lambda:lambda_function.lambda_handler (python3.10)",
+      "invokeTarget": {
+        "target": "code",
+        "projectRoot": "${workspaceFolder}/update-brand-score-lambda",
+        "lambdaHandler": "lambda_function.lambda_handler"
+      },
+      "lambda": {
+        "runtime": "python3.10",
+        "payload": {},
+        "environmentVariables": {}
+      }
+    },
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
       "name": "litter-logo-lambda:lambda_function.lambda_handler (python3.10)",
       "invokeTarget": {
         "target": "code",
