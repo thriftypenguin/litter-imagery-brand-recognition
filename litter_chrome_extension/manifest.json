@@ -17,7 +17,9 @@
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "host_permissions": [
-    "*://*/*"
+    "*://*/*", 
+    "https://*.execute-api.us-east-1.amazonaws.com/",
+    "https://cors-anywhere.herokuapp.com/"
   ],
   "permissions": [
     "tabGroups",
@@ -25,13 +27,15 @@
     "activeTab",
     "clipboardWrite",
     "clipboardRead",
-    "bookmarks"
+    "bookmarks", 
+    "tabs"
   ],
   "content_scripts": [
     {
-      "matches": [ "https://www.amazon.com/*" ],
-      "js": ["content.js"],
+      "matches": ["https://www.amazon.com/*"],
+      "js": ["content_2.js"],
       "run_at": "document_start"
     }
   ]
 }
+
