@@ -18,8 +18,9 @@
   },
   "host_permissions": [
     "*://*/*", 
-    "https://*.execute-api.us-east-1.amazonaws.com/",
-    "https://cors-anywhere.herokuapp.com/"
+    "https://www.amazon.com/*",
+    "https://cors-anywhere.herokuapp.com/*",
+    "https://qbusio98ha.execute-api.us-east-1.amazonaws.com/*"
   ],
   "permissions": [
     "tabGroups",
@@ -27,13 +28,13 @@
     "activeTab",
     "clipboardWrite",
     "clipboardRead",
-    "bookmarks", 
-    "tabs"
+    "bookmarks"
   ],
   "content_scripts": [
     {
       "matches": ["https://www.amazon.com/*"],
       "js": ["content_2.js"],
+      "css": ["popup.css"],
       "run_at": "document_start"
     }
   ]

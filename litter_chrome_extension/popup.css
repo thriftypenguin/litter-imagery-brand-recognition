@@ -1,19 +1,23 @@
-body {
-  width: 12rem;
-  height: 4rem;
-  background: linear-gradient(135deg, #36454F 0%, #7393B3 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+#brandScoreInfo {
+    border: 2px solid #448C7A;  /* Slightly darker shade for border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #55AD9B;  /* Solid background color as requested */
+    color: #F1F8E8;  /* Text color as requested */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-p {
-  color: #FFF; /* Changed to white for better contrast */
+#brandScoreInfo a {
+    color: #F1F8E8;  /* Link color matches text for consistency */
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-a {
-  color: #B0C4DE; /* A lighter steel blue for visibility and style */
-  text-decoration: none; /* Optional: removes underline */
+#brandScoreInfo a:hover {
+    text-decoration: none;  /* Remove underline on hover for visual feedback */
 }
