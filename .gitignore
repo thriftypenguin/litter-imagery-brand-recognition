@@ -3,3 +3,6 @@
 cdk.out/
 cdk.json
 sample_images/
+boxes/
+login_config_awsrds.json
+*.pyc
