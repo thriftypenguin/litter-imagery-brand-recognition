@@ -7,3 +7,5 @@ sample_images/
 litter-logo-lambda/*psycopg*
 login_config_awsrds.json
 __pycache__/
+boxes/
+branded/
