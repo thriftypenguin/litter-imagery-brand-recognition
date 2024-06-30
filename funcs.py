@@ -6,31 +6,8 @@ import cv2
 import csv
 import seaborn as sns
 
-def read_names(input_dir):
-    '''
-    Takes folder name and returns a list of filenames in the folder
-    and list of 0/1 labels for each file name
-    Assumes that folder contains files with name-ID-label.jpg format:
-    0b02292fff587f33db7136009fa2d52c-195-0.jpg
-    '''
-    image_names = []
-    labels = []
-
-    for file in glob.glob(f'{input_dir}/*.jpg'):
-        filename = file.split('/')[-1]
-        num_colonies = int(filename.split('-')[2].strip().split('.')[0])
-        if num_colonies == 0:
-            labels.append(0)
-        else:
-            labels.append(1)
-        image_names.append(filename)
-
-    X_files = np.array(image_names) #  Array with image nbames
-    y = np.array(labels)			#  Array with binary labels
-    return X_files, y
 
 from sklearn.metrics import f1_score, accuracy_score, recall_score, confusion_matrix, PrecisionRecallDisplay, precision_recall_curve
-from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
 
 def custom_train_val_split(X, y, val_size=0.3, random_state = 42):
@@ -339,15 +316,3 @@ def evaluate_model(history, y_true, y_pred, plot_target = False):
       _ = display.ax_.fill_between([0.99,1], [0.3,0.3], [1,1], facecolor = 'green', alpha=.5)
 
     return f1, accuracy, recall, convergence
-
-
-from keras.callbacks import EarlyStopping
-class CustomStopper(EarlyStopping):
-    def __init__(self, monitor='val_loss',
-             patience=5, verbose=0, mode='auto', start_epoch = 10, restore_best_weights=True): # add argument for starting epoch
-        super(CustomStopper, self).__init__()
-        self.start_epoch = start_epoch
-
-    def on_epoch_end(self, epoch, logs=None):
-        if epoch > self.start_epoch:
-            super().on_epoch_end(epoch, logs)
