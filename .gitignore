@@ -1,8 +1,14 @@
+.ipynb_checkpoints/
 .DS_Store
 .venv/
+.virtual_documents/
 cdk.out/
 cdk.json
 sample_images/
 */*psycopg*
 AWS_setup/login_config_awsrds.json
 */__pycache__
+boxes/
+branded/
+login_config_awsrds.json
+*.pyc
