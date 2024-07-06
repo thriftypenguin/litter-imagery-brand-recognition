@@ -1,8 +1,11 @@
+.ipynb_checkpoints/
 .DS_Store
 .venv/
 cdk.out/
 cdk.json
 sample_images/
-<<<<<<< HEAD
 */*psycopg*
 venv/
+login_config_awsrds.json
+__pycache__/
+boxes/
