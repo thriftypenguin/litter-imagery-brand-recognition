@@ -3,5 +3,6 @@
 cdk.out/
 cdk.json
 sample_images/
+<<<<<<< HEAD
 */*psycopg*
 venv/
