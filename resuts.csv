@@ -1,0 +1,297 @@
+idx	true	num_true	predicted	num_found	correct	missed	extra
+0	kirkland	1	kirkland	1.0	1	0	0
+1	nan	1	zz_unbranded, zz_unbranded	2.0	0	0	2
+2	nan	1	busch_light	1.0	0	0	1
+3	bud_light,bud_light	2	zz_unbranded	1.0	0	2	1
+4	kirkland	1	nan	0.0	0	1	0
+5	pbr	1	nan	0.0	0	1	0
+6	nan	1	zz_unbranded	1.0	0	0	1
+7	nan	1	zz_unbranded	1.0	0	0	1
+8	nan	1	nan	0.0	1	0	0
+9	nan	1	heineken	1.0	0	0	1
+10	nan	1	nan	0.0	1	0	0
+11	yoohoo	1	zz_unbranded	1.0	0	1	1
+12	budweiser	1	nan	0.0	0	1	0
+13	seven_eleven,seven_eleven,dorritos	3	seven_eleven, zz_unbranded	2.0	1	2	1
+14	mcdonalds	1	zz_unbranded	1.0	0	1	1
+15	poland_spring,deer_park,poland_spring,poland_spring,deer_park,kirkland,kirkland,kirkland,michelob,pampers	10	zz_unbranded, deer_park	2.0	0	10	2
+16	nan	1	nan	0.0	1	0	0
+17	natural_ice,koolaid	2	heineken, natural_ice	2.0	0	2	2
+18	corona,modelo,perrier	3	corona, zz_unbranded, modelo	3.0	1	2	2
+19	nan	1	zz_unbranded	1.0	0	0	1
+20	bud_light	1	bud_light, bud_light	2.0	1	0	1
+21	nan	1	zz_unbranded	1.0	0	0	1
+22	nan	1	zz_unbranded	1.0	0	0	1
+23	heineken	1	heineken	1.0	1	0	0
+24	coca_cola	1	coca_cola	1.0	1	0	0
+25	nan	1	zz_unbranded	1.0	0	0	1
+26	deer_park	1	deer_park	1.0	1	0	0
+27	corona,kirkland	2	nan	0.0	0	2	0
+28	deer_park	1	nan	0.0	0	1	0
+29	nan	1	nan	0.0	1	0	0
+30	deer_park	1	deer_park, zz_unbranded	2.0	1	0	1
+31	nan	1	heineken, zz_unbranded	2.0	0	0	2
+32	nan	1	nan	0.0	1	0	0
+33	bud_light,bud_light,corona,corona	4	zz_unbranded, zz_unbranded, zz_unbranded	3.0	0	4	3
+34	evan_williams	1	zz_unbranded	1.0	0	1	1
+35	corona,heineken	2	nan	0.0	0	2	0
+36	twix	1	twix	1.0	1	0	0
+37	nan	1	nan	0.0	1	0	0
+38	nan	1	zz_unbranded	1.0	0	0	1
+39	nan	1	nan	0.0	1	0	0
+40	nan	1	nan	0.0	1	0	0
+41	modelo,modelo,shasta	3	zz_unbranded, zz_unbranded	2.0	0	3	2
+42	nan	1	nan	0.0	1	0	0
+43	heineken	1	heineken, heineken	2.0	1	0	1
+44	nan	1	nan	0.0	1	0	0
+45	nan	1	zz_unbranded	1.0	0	0	1
+46	heineken	1	zz_unbranded, zz_unbranded, zz_unbranded, heineken	4.0	0	1	4
+47	nan	1	green_mountain	1.0	0	0	1
+48	nan	1	nan	0.0	1	0	0
+49	heineken,heineken,modelo,arizona,coca_cola,sprite,natural_ice,milwakee_best_ice,budweiser,milwakee_best_ice	10	heineken, heineken, sprite	3.0	1	9	2
+50	nan	1	nan	0.0	1	0	0
+51	arizona	1	arizona	1.0	1	0	0
+52	nan	1	nan	0.0	1	0	0
+53	turkey_hill	1	nan	0.0	0	1	0
+54	nan	1	nan	0.0	1	0	0
+55	snickers	1	zz_unbranded	1.0	0	1	1
+56	brisk	1	nan	0.0	0	1	0
+57	nan	1	nan	0.0	1	0	0
+58	nan	1	nan	0.0	1	0	0
+59	lacroix	1	zz_unbranded, zz_unbranded	2.0	0	1	2
+60	nan	1	nan	0.0	1	0	0
+61	bud_light,bud_light	2	zz_unbranded, bud_light, bud_light	3.0	0	2	3
+62	lays	1	zz_unbranded, zz_unbranded, zz_unbranded	3.0	0	1	3
+63	modelo	1	modelo, modelo	2.0	1	0	1
+64	nan	1	deer_park, zz_unbranded	2.0	0	0	2
+65	nan	1	nan	0.0	1	0	0
+66	nan	1	nan	0.0	1	0	0
+67	nan	1	nan	0.0	1	0	0
+68	nan	1	nan	0.0	1	0	0
+69	nan	1	nan	0.0	1	0	0
+70	hersheys	1	caprisun, zz_unbranded, zz_unbranded	3.0	0	1	3
+71	nan	1	nan	0.0	1	0	0
+72	99	1	nan	0.0	0	1	0
+73	dunkin_donuts	1	heineken, heineken, heineken, heineken	4.0	0	1	4
+74	nan	1	nan	0.0	1	0	0
+75	marlboro	1	philip_morris, zz_unbranded, zz_unbranded	3.0	0	1	3
+76	sanpple	1	zz_unbranded	1.0	0	1	1
+77	dasani	1	nan	0.0	0	1	0
+78	mnm	1	zz_unbranded	1.0	0	1	1
+79	vitamin	1	nan	0.0	0	1	0
+80	nan	1	nan	0.0	1	0	0
+81	nan	1	zz_unbranded	1.0	0	0	1
+82	corona,deer_park,turkey_hill	3	modelo, zz_unbranded	2.0	0	3	2
+83	nan	1	nan	0.0	1	0	0
+84	puraqua	1	zz_unbranded, zz_unbranded	2.0	0	1	2
+85	heineken	1	heineken	1.0	1	0	0
+86	michelob	1	zz_unbranded	1.0	0	1	1
+87	kirkland	1	heineken	1.0	0	1	1
+88	deer_park	1	nan	0.0	0	1	0
+89	mcdonalds,big_gulp,seven_eleven	3	zz_unbranded	1.0	0	3	1
+90	ross ouzo	1	zz_unbranded	1.0	0	1	1
+91	nan	1	nan	0.0	1	0	0
+92	nan	1	heineken	1.0	0	0	1
+93	nan	1	nan	0.0	1	0	0
+94	mentos	1	zz_unbranded	1.0	0	1	1
+95	mcdonalds,google	2	zz_unbranded	1.0	0	2	1
+96	nan	1	zz_unbranded	1.0	0	0	1
+97	sprite	1	zz_unbranded	1.0	0	1	1
+98	camel	1	heineken	1.0	0	1	1
+99	natural_ice	1	bud_light	1.0	0	1	1
+100	nan	1	nan	0.0	1	0	0
+101	dasy	1	zz_unbranded	1.0	0	1	1
+102	nan	1	monster	1.0	0	0	1
+103	nan	1	nan	0.0	1	0	0
+104	nan	1	nan	0.0	1	0	0
+105	marlboro	1	marlboro, philip_morris	2.0	1	0	1
+106	big_gulp	1	nan	0.0	0	1	0
+107	nan	1	zz_unbranded	1.0	0	0	1
+108	nan	1	nan	0.0	1	0	0
+109	heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken	10	heineken, heineken, heineken, heineken, heineken, heineken	6.0	1	9	5
+110	nan	1	nan	0.0	1	0	0
+111	nan	1	zz_unbranded	1.0	0	0	1
+112	pbr	1	pbr	1.0	1	0	0
+113	corona	1	zz_unbranded	1.0	0	1	1
+114	nan	1	nan	0.0	1	0	0
+115	heineken	1	heineken, heineken	2.0	1	0	1
+116	corona,corona	2	nan	0.0	0	2	0
+117	modelo	1	modelo	1.0	1	0	0
+118	nan	1	nan	0.0	1	0	0
+119	bud_light	1	bud_light	1.0	1	0	0
+120	corona	1	heineken, corona, corona	3.0	0	1	3
+121	gogo	1	reeses, zz_unbranded	2.0	0	1	2
+122	corona	1	corona	1.0	1	0	0
+123	nan	1	nan	0.0	1	0	0
+124	corona	1	zz_unbranded	1.0	0	1	1
+125	heineken	1	stella	1.0	0	1	1
+126	nan	1	nan	0.0	1	0	0
+127	corona	1	nan	0.0	0	1	0
+128	nan	1	zz_unbranded	1.0	0	0	1
+129	nan	1	nan	0.0	1	0	0
+130	nan	1	zz_unbranded, zz_unbranded	2.0	0	0	2
+131	fruit_punch,mountain_dew,milwakee_best_ice	3	heineken, busch_light	2.0	0	3	2
+132	mcdonalds	1	nan	0.0	0	1	0
+133	nan	1	zz_unbranded	1.0	0	0	1
+134	bang	1	zz_unbranded	1.0	0	1	1
+135	heineken,corona	2	corona, zz_unbranded, heineken	3.0	1	1	2
+136	heineken,aw,busch,dasani	4	busch_light, heineken, zz_unbranded, zz_unbranded, zz_unbranded	5.0	0	4	5
+137	nan	1	nan	0.0	1	0	0
+138	heineken	1	zz_unbranded, zz_unbranded, heineken	3.0	0	1	3
+139	deer_park,goya,goya	3	nan	0.0	0	3	0
+140	coca_cola	1	dr_pepper	1.0	0	1	1
+141	heineken	1	heineken, heineken	2.0	1	0	1
+142	nan	1	zz_unbranded, pepsi	2.0	0	0	2
+143	corona	1	nan	0.0	0	1	0
+144	nan	1	nan	0.0	1	0	0
+145	nan	1	nan	0.0	1	0	0
+146	seven_eleven	1	bud_light	1.0	0	1	1
+147	mcdonalds	1	zz_unbranded	1.0	0	1	1
+148	coca_cola	1	zz_unbranded, poland_spring, heineken	3.0	0	1	3
+149	nan	1	zz_unbranded	1.0	0	0	1
+150	heineken,heineken	2	heineken, heineken	2.0	1	1	1
+151	seven_eleven	1	zz_unbranded	1.0	0	1	1
+152	nan	1	zz_unbranded, zz_unbranded	2.0	0	0	2
+153	heineken,heineken,heineken,heineken,heineken	5	heineken, heineken	2.0	1	4	1
+154	kirkland	1	kirkland, zz_unbranded	2.0	1	0	1
+155	nan	1	nan	0.0	1	0	0
+156	nan	1	zz_unbranded, zz_unbranded	2.0	0	0	2
+157	nan	1	zz_unbranded	1.0	0	0	1
+158	corona	1	zz_unbranded	1.0	0	1	1
+159	nan	1	heineken	1.0	0	0	1
+160	nan	1	zz_unbranded	1.0	0	0	1
+161	monster,corona,corona,redbull	4	corona, corona, modelo	3.0	1	3	2
+162	nan	1	nan	0.0	1	0	0
+163	nan	1	nan	0.0	1	0	0
+164	nan	1	nan	0.0	1	0	0
+165	slurpee	1	zz_unbranded, zz_unbranded	2.0	0	1	2
+166	nan	1	heineken	1.0	0	0	1
+167	deer_park	1	zz_unbranded	1.0	0	1	1
+168	corona	1	corona	1.0	1	0	0
+169	nan	1	zz_unbranded	1.0	0	0	1
+170	coca_cola	1	zz_unbranded	1.0	0	1	1
+171	nan	1	zz_unbranded	1.0	0	0	1
+172	green_mountain	1	green_mountain	1.0	1	0	0
+173	corona	1	busch_light, corona	2.0	0	1	2
+174	niagara	1	nan	0.0	0	1	0
+175	nan	1	zz_unbranded	1.0	0	0	1
+176	nan	1	zz_unbranded	1.0	0	0	1
+177	two ball	1	zz_unbranded	1.0	0	1	1
+178	nan	1	zz_unbranded	1.0	0	0	1
+179	flow	1	zz_unbranded, heineken, heineken, heineken, heineken	5.0	0	1	5
+180	nan	1	zz_unbranded	1.0	0	0	1
+181	heineken	1	heineken	1.0	1	0	0
+182	silver_falls	1	zz_unbranded	1.0	0	1	1
+183	deer_park,corona,deer_park,heineken,cheetos,coca_cola	6	zz_unbranded, zz_unbranded, coca_cola, zz_unbranded, corona, heineken, zz_unbranded, deer_park	8.0	0	6	8
+184	nan	1	nan	0.0	1	0	0
+185	nan	1	zz_unbranded, zz_unbranded	2.0	0	0	2
+186	heineken	1	heineken	1.0	1	0	0
+187	kitkat	1	nan	0.0	0	1	0
+188	coors	1	nan	0.0	0	1	0
+189	nan	1	nan	0.0	1	0	0
+190	nan	1	zz_unbranded	1.0	0	0	1
+191	corona	1	heineken, zz_unbranded	2.0	0	1	2
+192	welchs	1	zz_unbranded, modelo	2.0	0	1	2
+193	bud_light,heineken	2	bud_light, heineken, heineken	3.0	1	1	2
+194	nan	1	nan	0.0	1	0	0
+195	nan	1	nan	0.0	1	0	0
+196	heineken	1	heineken, heineken, heineken	3.0	1	0	2
+197	heineken	1	heineken	1.0	1	0	0
+198	gatorade,corona,heineken	3	zz_unbranded, zz_unbranded, gatorade	3.0	0	3	3
+199	nan	1	nan	0.0	1	0	0
+200	coca_cola	1	zz_unbranded	1.0	0	1	1
+201	deer_park	1	deer_park	1.0	1	0	0
+202	coors	1	zz_unbranded, corona, corona	3.0	0	1	3
+203	coca_cola,coca_cola	2	zz_unbranded	1.0	0	2	1
+204	seven_eleven	1	zz_unbranded, zz_unbranded	2.0	0	1	2
+205	nan	1	nan	0.0	1	0	0
+206	nan	1	nan	0.0	1	0	0
+207	nan	1	nan	0.0	1	0	0
+208	corona	1	corona	1.0	1	0	0
+209	samuel_adams,samuel_adams,coors	3	zz_unbranded	1.0	0	3	1
+210	michelob	1	michelob	1.0	1	0	0
+211	modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo,modelo	13	modelo, modelo, modelo	3.0	1	12	2
+212	popeyes	1	zz_unbranded	1.0	0	1	1
+213	bud_light,bud_light,bud_light	3	bud_light	1.0	1	2	0
+214	nan	1	nan	0.0	1	0	0
+215	nan	1	nan	0.0	1	0	0
+216	nan	1	bud_light	1.0	0	0	1
+217	nan	1	nan	0.0	1	0	0
+218	burger_king	1	zz_unbranded	1.0	0	1	1
+219	la_yogurt	1	3_musketeers, zz_unbranded	2.0	0	1	2
+220	nan	1	nan	0.0	1	0	0
+221	bud_light	1	bud_light	1.0	1	0	0
+222	nan	1	nan	0.0	1	0	0
+223	nan	1	nan	0.0	1	0	0
+224	nan	1	nan	0.0	1	0	0
+225	nan	1	nan	0.0	1	0	0
+226	nan	1	nan	0.0	1	0	0
+227	new_amsterdam	1	nan	0.0	0	1	0
+228	oreo	1	zz_unbranded, zz_unbranded	2.0	0	1	2
+229	corona	1	corona	1.0	1	0	0
+230	modelo	1	zz_unbranded	1.0	0	1	1
+231	nan	1	zz_unbranded	1.0	0	0	1
+232	nan	1	zz_unbranded	1.0	0	0	1
+233	corona,corona,heineken,heineken,bud_light,bud_light,stella,stella,camel,camel,jarritos,miller,sangria_senorial	13	nan	0.0	0	13	0
+234	corona,heineken,heineken,heineken	4	heineken, heineken, corona	3.0	1	3	2
+235	nan	1	zz_unbranded	1.0	0	0	1
+236	gatorade	1	nan	0.0	0	1	0
+237	nan	1	nan	0.0	1	0	0
+238	nan	1	nan	0.0	1	0	0
+239	coca_cola	1	coca_cola	1.0	1	0	0
+240	corona	1	zz_unbranded	1.0	0	1	1
+241	nan	1	zz_unbranded	1.0	0	0	1
+242	nan	1	nan	0.0	1	0	0
+243	fanta	1	zz_unbranded	1.0	0	1	1
+244	kirkland	1	nan	0.0	0	1	0
+245	nan	1	nan	0.0	1	0	0
+246	icehouse_edge	1	nan	0.0	0	1	0
+247	mcdonalds,kirkland	2	zz_unbranded, zz_unbranded	2.0	0	2	2
+248	nan	1	nan	0.0	1	0	0
+249	jim_beam	1	zz_unbranded	1.0	0	1	1
+250	peaceful_fruits	1	zz_unbranded	1.0	0	1	1
+251	heineken,heineken	2	heineken, heineken, heineken, heineken	4.0	1	1	3
+252	bud_light	1	zz_unbranded	1.0	0	1	1
+253	grace	1	zz_unbranded	1.0	0	1	1
+254	nan	1	nan	0.0	1	0	0
+255	coca_cola	1	coca_cola	1.0	1	0	0
+256	nan	1	corona	1.0	0	0	1
+257	nan	1	zz_unbranded	1.0	0	0	1
+258	coca_cola	1	modelo, coca_cola	2.0	0	1	2
+259	pacifico	1	pacifico	1.0	1	0	0
+260	gatorade	1	nan	0.0	0	1	0
+261	nan	1	heineken	1.0	0	0	1
+262	sams_club	1	nan	0.0	0	1	0
+263	nan	1	nan	0.0	1	0	0
+264	dasani,heineken	2	zz_unbranded, zz_unbranded, corona	3.0	0	2	3
+265	heineken,popeyes	2	heineken	1.0	1	1	0
+266	parliament	1	nan	0.0	0	1	0
+267	acadia	1	nan	0.0	0	1	0
+268	nan	1	zz_unbranded	1.0	0	0	1
+269	nan	1	zz_unbranded	1.0	0	0	1
+270	heineken	1	heineken	1.0	1	0	0
+271	nan	1	lays	1.0	0	0	1
+272	nan	1	zz_unbranded	1.0	0	0	1
+273	nan	1	nan	0.0	1	0	0
+274	nan	1	nan	0.0	1	0	0
+275	smirnoff	1	zz_unbranded	1.0	0	1	1
+276	cheetos	1	zz_unbranded, zz_unbranded, zz_unbranded	3.0	0	1	3
+277	fireball,bill_miller,hill country fair	3	zz_unbranded, zz_unbranded	2.0	0	3	2
+278	nan	1	zz_unbranded	1.0	0	0	1
+279	cheetos	1	cheetos	1.0	1	0	0
+280	nan	1	nan	0.0	1	0	0
+281	heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken,heineken	13	heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken, heineken	16.0	1	12	15
+282	nan	1	zz_unbranded	1.0	0	0	1
+283	heineken	1	heineken, stella	2.0	1	0	1
+284	miller	1	modelo, zz_unbranded	2.0	0	1	2
+285	corona,corona,corona,heineken	4	heineken, modelo, heineken	3.0	1	3	2
+286	nan	1	nan	0.0	1	0	0
+287	lybbis	1	zz_unbranded	1.0	0	1	1
+288	boulevard_brewing	1	zz_unbranded	1.0	0	1	1
+289	nan	1	nan	0.0	1	0	0
+290	nan	1	heineken, zz_unbranded	2.0	0	0	2
+291	nan	1	corona	1.0	0	0	1
+292	david	1	zz_unbranded	1.0	0	1	1
+293	corona,corona,corona,corona,corona,corona,corona,corona,corona,corona,corona,corona,corona,heineken,heineken,heineken,heineken,heineken,heineken,heineken,gatorade	21	heineken, heineken, corona	3.0	1	20	2
+294	5-hour energy	1	nan	0.0	0	1	0
+295	nan	1	zz_unbranded	1.0	0	0	1
