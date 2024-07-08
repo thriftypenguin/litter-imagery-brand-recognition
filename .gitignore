@@ -1,10 +1,12 @@
 .ipynb_checkpoints/
 .DS_Store
 .venv/
+venv/
 .virtual_documents/
 cdk.out/
 cdk.json
 sample_images/
+test_dataset/
 */*psycopg*
 AWS_setup/login_config_awsrds.json
 */__pycache__
