@@ -3,3 +3,6 @@
 cdk.out/
 cdk.json
 sample_images/
+*/*psycopg*
+__pycache__/
+login_config_awsrds.json
