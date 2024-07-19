@@ -18,7 +18,7 @@ def lambda_handler(event, context):
     # Conver the array into jpeg
     resized_jpeg = cv2.imencode('.jpg', resized_image)[1]
     # Serialize the jpg using base 64
-    payload = base64.b64encode(resized_image).decode('utf-8')
+    payload = base64.b64encode(resized_jpeg)
     
     runtime= boto3.client('runtime.sagemaker')
     response = runtime.invoke_endpoint(EndpointName=ENDPOINT_NAME,
@@ -77,8 +77,8 @@ def lambda_handler(event, context):
                     continue
                 cv2.line(orig_image, (int(x_ratio*start_keypoint[:2][0]),int(y_ratio*start_keypoint[:2][1])),(int(x_ratio*end_keypoint[:2][0]),int(y_ratio*end_keypoint[:2][1])), color=line_color, thickness=2)
     
-    plt.imshow(cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB))
-    plt.show()
+    im_w_boxes = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
+    result['image'] = base64.b64encode(im_w_boxes).decode('utf-8')
             
     return {
         'statusCode': 200,
