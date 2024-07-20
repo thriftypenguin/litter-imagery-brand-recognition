@@ -1,11 +1,28 @@
-import boto3, cv2, numpy as np, matplotlib.pyplot as plt, random
-import base64, json
+import boto3, cv2, random, base64, json
+import numpy as np
+
+def str_to_array(encoded_str):
+    aux_path = '/tmp/tmp.png'
+    with open(aux_path, 'wb') as f:
+        f.write(base64.b64decode(encoded_str))
+        f.close
+    return cv2.imread(aux_path)
+
+def array_to_str(im_array):
+    aux_path = '/tmp/tmp.png'
+    cv2.imwrite(aux_path, im_array)
+    
+    with open(aux_path, 'rb') as f:
+        encoded_im = base64.b64encode(f.read())
+        f.close
+    return encoded_im.decode('utf-8')
 
 def lambda_handler(event, context):
     ENDPOINT_NAME = 'yolov8-pytorch-2024-07-18-21-09-58-005126'            
-                             
+    
     # Read the image into a numpy  array
-    orig_image = cv2.imread('bus.jpg')
+    #orig_image = cv2.imread('test_image.jpg')
+    orig_image = str_to_array(event['body'])
     
     # Calculate the parameters for image resizing
     image_height, image_width, _ = orig_image.shape
@@ -42,45 +59,11 @@ def lambda_handler(event, context):
                 for c in range(3):
                     orig_image[:,:,c] = np.where(mask>0.5, orig_image[:,:,c]*(0.5)+0.5*color[c], orig_image[:,:,c])
     
-    if 'probs' in result:
-        # Find Class
-        lbl = result['probs'].index(max(result['probs']))
-        color = (random.randint(10,255), random.randint(10,255), random.randint(10,255))
-        cv2.putText(orig_image, f"Class: {int(lbl)}", (20,20), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
-        
-    if 'keypoints' in result:
-        # Define the colors for the keypoints and lines
-        keypoint_color = (random.randint(10,255), random.randint(10,255), random.randint(10,255))
-        line_color = (random.randint(10,255), random.randint(10,255), random.randint(10,255))
-    
-        # Define the keypoints and the lines to draw
-        # keypoints = keypoints_array[:, :, :2]  # Ignore the visibility values
-        lines = [
-            (0, 1), (0, 2), (1, 3), (2, 4),  # Head
-            (5, 6), (5, 7), (7, 9), (6, 8), (8, 10),  # Torso
-            (11, 12), (11, 13), (13, 15), (12, 14), (14, 16)  # Legs
-        ]
-    
-        # Draw the keypoints and the lines on the image
-        for keypoints_instance in result['keypoints']:
-            # Draw the keypoints
-            for keypoint in keypoints_instance:
-                if keypoint[2] == 0:  # If the keypoint is not visible, skip it
-                    continue
-                cv2.circle(orig_image, (int(x_ratio*keypoint[:2][0]),int(y_ratio*keypoint[:2][1])), radius=5, color=keypoint_color, thickness=-1)
-    
-            # Draw the lines
-            for line in lines:
-                start_keypoint = keypoints_instance[line[0]]
-                end_keypoint = keypoints_instance[line[1]]
-                if start_keypoint[2] == 0 or end_keypoint[2] == 0:  # If any of the keypoints is not visible, skip the line
-                    continue
-                cv2.line(orig_image, (int(x_ratio*start_keypoint[:2][0]),int(y_ratio*start_keypoint[:2][1])),(int(x_ratio*end_keypoint[:2][0]),int(y_ratio*end_keypoint[:2][1])), color=line_color, thickness=2)
-    
-    im_w_boxes = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
-    result['image'] = base64.b64encode(im_w_boxes).decode('utf-8')
+    im_to_return = array_to_str(orig_image)
             
     return {
         'statusCode': 200,
-        'body': json.dumps(result)
+        'body': im_to_return,
+        'isBase64Encoded': True,
+        'headers': {'content-type':'image/png'}
     }
