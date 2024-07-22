@@ -1,13 +1,19 @@
+# Aux files of python and virtual env
 .ipynb_checkpoints/
 .DS_Store
 .venv/
+venv/
+*/*psycopg*
+__pycache__/
+
+# Secrets
 cdk.out/
 cdk.json
-sample_images/
-*/*psycopg*
-venv/
 login_config_awsrds.json
-__pycache__/
+
+
+# Folders with datasets
 boxes/
 test_dataset/
 branded/
+sample_images/
