@@ -5,6 +5,7 @@
 venv/
 */*psycopg*
 __pycache__/
+litter-logo-lambda/python
 
 # Secrets
 cdk.out/
