@@ -1,15 +1,21 @@
+// Function to extract brand name from the page
+function extractBrandName() {
+    const brandElement = document.querySelector('span.a-size-base.po-break-word');
+    if (brandElement) {
+        return brandElement.textContent.trim();
+    } else {
+        console.log('Brand element not found');
+        return null;
+    }
+}
+
 // Function to fetch data from the API
 async function fetchBrandScore(brandName) {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const url = `${proxyUrl}https://qbusio98ha.execute-api.us-east-1.amazonaws.com/litter-logo-api?brand_name=${brandName}`;
+    const formattedBrandName = brandName.replace(/\s+/g, '');
+    const url = `https://qbusio98ha.execute-api.us-east-1.amazonaws.com/litter-logo-api?brand_name=${formattedBrandName}`;
     
     try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -22,59 +28,66 @@ async function fetchBrandScore(brandName) {
 }
 
 // Function to display the brand score
-function displayBrandScore(data, element) {
-    if (data && data.brand_name && data.brand_score) {
-        element.innerHTML = `Based on our research, ${data.brand_name}'s brand score is ${data.brand_score}. Find out more about the brand score <a href="#">here</a>.`;
-    } else {
-        element.innerHTML = `We currently don't have a litter score for this brand but you can learn more about the litter score <a href="#">here</a>.`;
+function displayBrandScore(data, element, brandName) {
+    // Function to format brand name: capitalize first letter of each word and remove symbols
+    function formatBrandName(name) {
+        return name
+            .replace(/[_,]/g, ' ')  // Replace underscores and commas with spaces
+            .replace(/\s+/g, ' ')   // Replace multiple spaces with a single space
+            .trim()                 // Remove leading and trailing whitespace
+            .split(' ')             // Split into words
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())  // Capitalize first letter of each word
+            .join(' ');             // Join words back together
     }
-}
 
-// Function to extract brand name from Amazon page
-function extractBrandName() {
-    const bylineInfo = document.getElementById('bylineInfo');
-    console.log('BylineInfo:', bylineInfo);  // Debug output
-    if (bylineInfo) {
-        let href = bylineInfo.textContent.split(' ');
-        if (href[0] === 'Visit') {
-            href = href.slice(2, -1);
-        } else {
-            href = href.slice(1);
-        }
-        return href.join('_').toLowerCase();
+    if (data && data.brand_name) {
+        const formattedBrandName = formatBrandName(data.brand_name);
+        element.innerHTML = `Based on the images collected by environmentalists across the country through Open Litter Map US, ${formattedBrandName} ranks as the ${data.brand_rank}th most polluting brand. 
+        This ranking reflects the significant environmental impact of their waste, with a lower ranking indicating higher pollution levels. 
+        We identified ${data.brand_im_count} images of ${formattedBrandName} litter out of a total of ${data.tot_im_count} collected. Our model estimates this with ${data.coconfidence}.
+        <br>Join the initiative to combat plastic pollution by capturing and uploading pictures of litter you encounter. Your contribution can make a difference. Upload your images <a href="#">here</a>.`;
+    } else {
+        const formattedBrandName = formatBrandName(brandName);
+        element.innerHTML = `We currently don't have enough data on ${formattedBrandName} to determine its pollution impact. 
+        You can help change that by joining our initiative to combat plastic pollution.
+        Capture and upload pictures of litter you encounter to make a difference. Upload your images <a href="#">here</a>.`;
     }
-    return null;
 }
 
 // Main function to run the extension
 async function main() {
-    // Check if we've already added the brand score info
     if (document.getElementById('brandScoreInfo')) {
         return;
     }
-
     const brandName = extractBrandName();
     if (brandName) {
-        const bylineInfo = document.getElementById('bylineInfo');
-        const scoreElement = document.createElement('div');
-        scoreElement.id = 'brandScoreInfo';
-        scoreElement.style.marginTop = '10px';
-        bylineInfo.parentNode.insertBefore(scoreElement, bylineInfo.nextSibling);
-
-        const data = await fetchBrandScore(brandName);
-        displayBrandScore(data, scoreElement);
-    }
-}
-
-// Function to run main() once the bylineInfo element is available
-function waitForBylineInfo() {
-    const bylineInfo = document.getElementById('bylineInfo');
-    if (bylineInfo) {
-        main();
+        console.log('Extracted brand name:', brandName);
+        const productTitle = document.querySelector('#productTitle');
+        if (productTitle) {
+            const scoreElement = document.createElement('div');
+            scoreElement.id = 'brandScoreInfo';
+            //scoreElement.style.cssText = 'width: 1000px; background-color: white; border: 2px solid green; padding: 10px; overflow-y: auto; margin-top: 10px;';
+            productTitle.parentNode.insertBefore(scoreElement, productTitle.nextSibling);
+            
+            try {
+                const response = await fetch(`https://qbusio98ha.execute-api.us-east-1.amazonaws.com/litter-logo-api?brand_name=${brandName.replace(/\s+/g, '_')}`);
+                const data = await response.json();
+                displayBrandScore(data, scoreElement);
+            } catch (error) {
+                console.error('Fetch error:', error);
+                scoreElement.innerHTML = 'An error occurred while fetching brand information.';
+            }
+        } else {
+            console.log('Product title element not found');
+        }
     } else {
-        requestAnimationFrame(waitForBylineInfo);
+        console.log('Brand name could not be extracted');
     }
 }
 
-// Start waiting for the bylineInfo element as soon as possible
-waitForBylineInfo();
+// Run the main function when the page is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', main);
+} else {
+    main();
+}

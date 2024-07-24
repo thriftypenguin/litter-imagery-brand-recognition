@@ -1,0 +1,7 @@
+# requirements.txt
+streamlit==1.11.0
+requests==2.26.0
+opencv-python==4.5.5.64
+numpy==1.21.4
+Pillow==8.4.0
+st-files-connection
