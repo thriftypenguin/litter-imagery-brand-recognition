@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Popup</title>
-    <link rel="stylesheet" type="text/css" href="popup.css">
+    <title>Litter Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 300px;
+            background-color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        h1 {
+            background-color: #f0f0f0;
+            color: #000000;
+            margin: 0;
+            padding: 10px;
+            font-size: 18px;
+            text-align: left;
+            border-bottom: 1px solid #cccccc;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 15px;
+            flex-grow: 1;
+        }
+        p {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+        a {
+            color: #0000FF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 4px;
+            color: #000000;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #ffcc00;
+        }
+        footer {
+            background-color: #ffffff;
+            color: #666666;
+            padding: 10px;
+            font-size: 12px;
+            text-align: center;
+            border-top: 1px solid #cccccc;
+        }
+    </style>
     <script src="jquery-3.7.1.slim.min.js"></script>
     <script src="popup.js"></script>
 </head>
 <body>
-    <p>Click the link below to open it in a new tab:</p>
-    <a href="https://www.wikipedia.org">Visit Example</a>
+    <div class="container">
+        <h1>Welcome to Litter Log</h1>
+        <div class="content">
+            <p>You can upload images using the link below. Thank you for your contribution. </p>
+            <button id="openLitterLog">Open Litter Log To Upload Photo</button>
+        </div>
+        <footer>Powered by Litter Log</footer>
+    </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
-$(document).ready(function(){
-  $('body').on('click', 'a', function(){
-      chrome.tabs.create({url: $(this).attr('href')});
-      return false;
-  });
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('openLitterLog').addEventListener('click', function() {
+        chrome.tabs.create({ url: 'https://openlittermaplitterlog.streamlit.app/' });
+    });
 });

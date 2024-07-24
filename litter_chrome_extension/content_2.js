@@ -45,12 +45,12 @@ function displayBrandScore(data, element, brandName) {
         element.innerHTML = `Based on the images collected by environmentalists across the country through Open Litter Map US, ${formattedBrandName} ranks as the ${data.brand_rank}th most polluting brand. 
         This ranking reflects the significant environmental impact of their waste, with a lower ranking indicating higher pollution levels. 
         We identified ${data.brand_im_count} images of ${formattedBrandName} litter out of a total of ${data.tot_im_count} collected. Our model estimates this with ${data.coconfidence}.
-        <br>Join the initiative to combat plastic pollution by capturing and uploading pictures of litter you encounter. Your contribution can make a difference. Upload your images <a href="#">here</a>.`;
+        <br>Join the initiative to combat plastic pollution by capturing and uploading pictures of litter you encounter. Your contribution can make a difference. Upload your images <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">here</a>.`;
     } else {
         const formattedBrandName = formatBrandName(brandName);
         element.innerHTML = `We currently don't have enough data on ${formattedBrandName} to determine its pollution impact. 
         You can help change that by joining our initiative to combat plastic pollution.
-        Capture and upload pictures of litter you encounter to make a difference. Upload your images <a href="#">here</a>.`;
+        Capture and upload pictures of litter you encounter to make a difference. Upload your images <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">here</a>.`;
     }
 }
 

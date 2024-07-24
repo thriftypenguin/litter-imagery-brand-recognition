@@ -20,7 +20,8 @@
     "*://*/*", 
     "https://www.amazon.com/*",
     "https://cors-anywhere.herokuapp.com/*",
-    "https://qbusio98ha.execute-api.us-east-1.amazonaws.com/*"
+    "https://qbusio98ha.execute-api.us-east-1.amazonaws.com/*",
+    "https://openlittermaplitterlog.streamlit.app/"
   ],
   "permissions": [
     "tabGroups",

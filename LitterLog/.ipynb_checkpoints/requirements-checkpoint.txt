@@ -1,7 +1,6 @@
 # requirements.txt
-streamlit==1.11.0
-requests==2.26.0
-opencv-python==4.5.5.64
-numpy==1.21.4
-Pillow==8.4.0
-st-files-connection
+streamlit==1.22.0
+numpy==1.23.5
+opencv-python-headless==4.7.0.72
+requests==2.29.0
+Pillow==9.5.0
