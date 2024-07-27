@@ -20,4 +20,4 @@ branded/
 sample_images/
 
 # Models
-YOLO_EffNet/models/
+evaluate_models/models/
