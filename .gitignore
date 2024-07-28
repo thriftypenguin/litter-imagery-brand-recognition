@@ -16,6 +16,7 @@ login_config_awsrds.json
 # Folders with datasets
 boxes/
 random_test_dataset/
+manual_test_dataset/
 branded/
 sample_images/
 
