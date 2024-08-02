@@ -43,7 +43,7 @@ function displayBrandScore(data, element, brandName) {
     if (data && data.brand_name) {
         const formattedBrandName = formatBrandName(data.brand_name);
         element.innerHTML = `${formattedBrandName} ranks ${data.brand_rank}th in pollution among brands in the US, <br> based on Open Litter Map data. 
-        <br>We found ${data.brand_im_count} images of ${formattedBrandName} litter out of ${data.tot_im_count} total. <br> with ${data.confidence} image range.
+        <br>We found ${data.brand_im_count} images of ${formattedBrandName} litter out of ${data.tot_im_count} total.
         <br>To raise awareness of packaging pollution: <br> <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
     } else {
         const formattedBrandName = formatBrandName(brandName);
