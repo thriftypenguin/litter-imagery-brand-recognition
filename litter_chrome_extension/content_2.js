@@ -42,15 +42,14 @@ function displayBrandScore(data, element, brandName) {
 
     if (data && data.brand_name) {
         const formattedBrandName = formatBrandName(data.brand_name);
-        element.innerHTML = `Based on the images collected by environmentalists across the country through Open Litter Map US, ${formattedBrandName} ranks as the ${data.brand_rank}th most polluting brand. 
-        This ranking reflects the significant environmental impact of their waste, with a lower ranking indicating higher pollution levels. 
-        We identified ${data.brand_im_count} images of ${formattedBrandName} litter out of a total of ${data.tot_im_count} collected. Our model estimates this with ${data.coconfidence}.
-        <br>Join the initiative to combat plastic pollution by capturing and uploading pictures of litter you encounter. Your contribution can make a difference. Upload your images <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">here</a>.`;
+        element.innerHTML = `${formattedBrandName} ranks ${data.brand_rank}th in pollution among brands in the US, <br> based on Open Litter Map data. 
+        <br>We found ${data.brand_im_count} images of ${formattedBrandName} litter out of ${data.tot_im_count} total. <br> with ${data.confidence} image range.
+        <br>To raise awareness of packaging pollution: <br> <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
     } else {
         const formattedBrandName = formatBrandName(brandName);
-        element.innerHTML = `We currently don't have enough data on ${formattedBrandName} to determine its pollution impact. 
+        element.innerHTML = `We currently don't have enough data on ${formattedBrandName}. 
         You can help change that by joining our initiative to combat plastic pollution.
-        Capture and upload pictures of litter you encounter to make a difference. Upload your images <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">here</a>.`;
+        <br>To raise awareness of packaging pollution: <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
     }
 }
 
