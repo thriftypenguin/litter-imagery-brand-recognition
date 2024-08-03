@@ -40,16 +40,33 @@ function displayBrandScore(data, element, brandName) {
             .join(' ');             // Join words back together
     }
 
-    if (data && data.brand_name) {
+    function getOrdinalSuffix(number) {
+        const j = number % 10,
+              k = number % 100;
+        if (j == 1 && k != 11) {
+            return "st";
+        }
+        if (j == 2 && k != 12) {
+            return "nd";
+        }
+        if (j == 3 && k != 13) {
+            return "rd";
+        }
+        return "th";
+    }
+
+    if (data && data.brand_name && data.brand_rank) {
         const formattedBrandName = formatBrandName(data.brand_name);
-        element.innerHTML = `${formattedBrandName} ranks ${data.brand_rank}th in pollution among brands in the US, <br> based on Open Litter Map data. 
+        element.innerHTML = `${formattedBrandName} ranks ${data.brand_rank}${getOrdinalSuffix(data.brand_rank)} in pollution among brands in the US, <br> based on Open Litter Map data. 
         <br>We found ${data.brand_im_count} images of ${formattedBrandName} litter out of ${data.tot_im_count} total.
+        <br>${data.confidence}
         <br>To raise awareness of packaging pollution: <br> <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
     } else {
-        const formattedBrandName = formatBrandName(brandName);
+        const formattedBrandName = brandName ? formatBrandName(brandName) : "this brand";
         element.innerHTML = `We currently don't have enough data on ${formattedBrandName}. 
         You can help change that by joining our initiative to combat plastic pollution.
-        <br>To raise awareness of packaging pollution: <a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
+        <br>To raise awareness of packaging pollution: 
+        <br><a href="https://openlittermaplitterlog.streamlit.app/" target="_blank">upload your litter images here</a>.`;
     }
 }
 
@@ -69,7 +86,8 @@ async function main() {
             productTitle.parentNode.insertBefore(scoreElement, productTitle.nextSibling);
             
             try {
-                const response = await fetch(`https://qbusio98ha.execute-api.us-east-1.amazonaws.com/litter-logo-api?brand_name=${brandName.replace(/\s+/g, '_')}`);
+                const response = await fetch(`https://qbusio98ha.execute-api.us-east-1.amazonaws.com/litter-logo-api?brand_name=${brandName.toLowerCase()}`);
+                console.log('fetch brand URL:', response);
                 const data = await response.json();
                 displayBrandScore(data, scoreElement);
             } catch (error) {
