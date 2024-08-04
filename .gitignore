@@ -1,12 +1,26 @@
+# Aux files of python and virtual env
+.ipynb_checkpoints/
 .DS_Store
 .venv/
 venv/
+
+# Python package directories
+*/*psycopg*
+__pycache__/
+litter-logo-lambda/*psycopg*
+litter-logo-lambda/python
+
+# Secrets
+login_config_awsrds.json
+
+# CDK outputs
 cdk.out/
 cdk.json
-sample_images/
-litter-logo-lambda/*psycopg*
-login_config_awsrds.json
-__pycache__/
+
+# Folders with datasets
 boxes/
+random_test_dataset/
 branded/
+sample_images/
 test_dataset/
+evaluate_models/models/
