@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import boto3, cv2, numpy as np, matplotlib.pyplot as plt, random
 import base64, json
 
@@ -6,6 +7,33 @@ def lambda_handler(event, context):
                              
     # Read the image into a numpy  array
     orig_image = cv2.imread('bus.jpg')
+=======
+import boto3, cv2, random, base64, json
+import numpy as np
+
+def str_to_array(encoded_str):
+    aux_path = '/tmp/tmp.png'
+    with open(aux_path, 'wb') as f:
+        f.write(base64.b64decode(encoded_str))
+        f.close
+    return cv2.imread(aux_path)
+
+def array_to_str(im_array):
+    aux_path = '/tmp/tmp.png'
+    cv2.imwrite(aux_path, im_array)
+    
+    with open(aux_path, 'rb') as f:
+        encoded_im = base64.b64encode(f.read())
+        f.close
+    return encoded_im.decode('utf-8')
+
+def lambda_handler(event, context):
+    ENDPOINT_NAME = 'yolov8-pytorch-2024-07-18-21-09-58-005126'            
+    
+    # Read the image into a numpy  array
+    #orig_image = cv2.imread('test_image.jpg')
+    orig_image = str_to_array(event['body'])
+>>>>>>> main
     
     # Calculate the parameters for image resizing
     image_height, image_width, _ = orig_image.shape
@@ -42,6 +70,7 @@ def lambda_handler(event, context):
                 for c in range(3):
                     orig_image[:,:,c] = np.where(mask>0.5, orig_image[:,:,c]*(0.5)+0.5*color[c], orig_image[:,:,c])
     
+<<<<<<< HEAD
     if 'probs' in result:
         # Find Class
         lbl = result['probs'].index(max(result['probs']))
@@ -84,3 +113,13 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps(result)
     }
+=======
+    im_to_return = array_to_str(orig_image)
+            
+    return {
+        'statusCode': 200,
+        'body': im_to_return,
+        'isBase64Encoded': True,
+        'headers': {'content-type':'image/png'}
+    }
+>>>>>>> main

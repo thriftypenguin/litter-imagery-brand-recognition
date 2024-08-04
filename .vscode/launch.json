@@ -3,6 +3,7 @@
     {
       "type": "aws-sam",
       "request": "direct-invoke",
+<<<<<<< HEAD
       "name": "imageupload-lambda:lambda_function.lambda_handler (python3.8)",
       "invokeTarget": {
         "target": "code",
@@ -11,6 +12,16 @@
       },
       "lambda": {
         "runtime": "python3.8",
+=======
+      "name": "litter-logo-lambda:lambda_function.lambda_handler (python3.10)",
+      "invokeTarget": {
+        "target": "code",
+        "projectRoot": "${workspaceFolder}/litter-logo-lambda",
+        "lambdaHandler": "lambda_function.lambda_handler"
+      },
+      "lambda": {
+        "runtime": "python3.10",
+>>>>>>> main
         "payload": {},
         "environmentVariables": {}
       }
